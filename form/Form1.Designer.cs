@@ -28,60 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.UserInfoBox = new System.Windows.Forms.GroupBox();
+            this.userInfoBox = new System.Windows.Forms.GroupBox();
+            this.cityComboBox = new System.Windows.Forms.ComboBox();
+            this.countryComboBox = new System.Windows.Forms.ComboBox();
+            this.surnameTextBox = new System.Windows.Forms.TextBox();
             this.completeButton = new System.Windows.Forms.Button();
-            this.townLabel = new System.Windows.Forms.Label();
+            this.cityLabel = new System.Windows.Forms.Label();
             this.birthdayGroupBox = new System.Windows.Forms.GroupBox();
             this.birthdayPicker = new System.Windows.Forms.DateTimePicker();
             this.countryLabel = new System.Windows.Forms.Label();
-            this.townDomainUpDown = new System.Windows.Forms.DomainUpDown();
-            this.countryDomainUpDown = new System.Windows.Forms.DomainUpDown();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.patronymicLabel = new System.Windows.Forms.Label();
             this.surnameLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.patronymicTextBox = new System.Windows.Forms.TextBox();
-            this.surnameTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.whatRadioButton = new System.Windows.Forms.RadioButton();
-            this.manRadioButton = new System.Windows.Forms.RadioButton();
-            this.womanRadioButton = new System.Windows.Forms.RadioButton();
-            this.UserInfoBox.SuspendLayout();
+            this.maleRadioButton = new System.Windows.Forms.RadioButton();
+            this.femaleRadioButton = new System.Windows.Forms.RadioButton();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.insertPhotoButton = new System.Windows.Forms.Button();
+            this.photoBox = new System.Windows.Forms.PictureBox();
+            this.userInfoBox.SuspendLayout();
             this.birthdayGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photoBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // UserInfoBox
+            // userInfoBox
             // 
-            this.UserInfoBox.Controls.Add(this.surnameTextBox);
-            this.UserInfoBox.Controls.Add(this.completeButton);
-            this.UserInfoBox.Controls.Add(this.townLabel);
-            this.UserInfoBox.Controls.Add(this.birthdayGroupBox);
-            this.UserInfoBox.Controls.Add(this.countryLabel);
-            this.UserInfoBox.Controls.Add(this.townDomainUpDown);
-            this.UserInfoBox.Controls.Add(this.countryDomainUpDown);
-            this.UserInfoBox.Controls.Add(this.progressBar);
-            this.UserInfoBox.Controls.Add(this.patronymicLabel);
-            this.UserInfoBox.Controls.Add(this.surnameLabel);
-            this.UserInfoBox.Controls.Add(this.nameLabel);
-            this.UserInfoBox.Controls.Add(this.patronymicTextBox);
-            this.UserInfoBox.Controls.Add(this.nameTextBox);
-            this.UserInfoBox.Controls.Add(this.pictureBox1);
-            this.UserInfoBox.Controls.Add(this.groupBox1);
-            this.UserInfoBox.Location = new System.Drawing.Point(12, 12);
-            this.UserInfoBox.Name = "UserInfoBox";
-            this.UserInfoBox.Size = new System.Drawing.Size(328, 355);
-            this.UserInfoBox.TabIndex = 0;
-            this.UserInfoBox.TabStop = false;
-            this.UserInfoBox.Text = "Пользовательская информация";
+            this.userInfoBox.Controls.Add(this.insertPhotoButton);
+            this.userInfoBox.Controls.Add(this.cityComboBox);
+            this.userInfoBox.Controls.Add(this.countryComboBox);
+            this.userInfoBox.Controls.Add(this.surnameTextBox);
+            this.userInfoBox.Controls.Add(this.completeButton);
+            this.userInfoBox.Controls.Add(this.cityLabel);
+            this.userInfoBox.Controls.Add(this.birthdayGroupBox);
+            this.userInfoBox.Controls.Add(this.countryLabel);
+            this.userInfoBox.Controls.Add(this.patronymicLabel);
+            this.userInfoBox.Controls.Add(this.surnameLabel);
+            this.userInfoBox.Controls.Add(this.nameLabel);
+            this.userInfoBox.Controls.Add(this.patronymicTextBox);
+            this.userInfoBox.Controls.Add(this.nameTextBox);
+            this.userInfoBox.Controls.Add(this.photoBox);
+            this.userInfoBox.Controls.Add(this.groupBox1);
+            this.userInfoBox.Location = new System.Drawing.Point(12, 12);
+            this.userInfoBox.Name = "userInfoBox";
+            this.userInfoBox.Size = new System.Drawing.Size(328, 378);
+            this.userInfoBox.TabIndex = 0;
+            this.userInfoBox.TabStop = false;
+            this.userInfoBox.Text = "Пользовательская информация";
+            // 
+            // cityComboBox
+            // 
+            this.cityComboBox.FormattingEnabled = true;
+            this.cityComboBox.Location = new System.Drawing.Point(158, 236);
+            this.cityComboBox.Name = "cityComboBox";
+            this.cityComboBox.Size = new System.Drawing.Size(158, 21);
+            this.cityComboBox.TabIndex = 26;
+            // 
+            // countryComboBox
+            // 
+            this.countryComboBox.FormattingEnabled = true;
+            this.countryComboBox.Items.AddRange(new object[] {
+            "Россия",
+            "Украина",
+            "Казахстан",
+            "США"});
+            this.countryComboBox.Location = new System.Drawing.Point(158, 209);
+            this.countryComboBox.Name = "countryComboBox";
+            this.countryComboBox.Size = new System.Drawing.Size(158, 21);
+            this.countryComboBox.TabIndex = 25;
+            this.countryComboBox.SelectedIndexChanged += new System.EventHandler(this.countryComboBox_SelectedIndexChanged);
+            this.countryComboBox.TextUpdate += new System.EventHandler(this.countryComboBox_SelectedIndexChanged);
+            // 
+            // surnameTextBox
+            // 
+            this.surnameTextBox.Location = new System.Drawing.Point(166, 27);
+            this.surnameTextBox.Name = "surnameTextBox";
+            this.surnameTextBox.Size = new System.Drawing.Size(150, 20);
+            this.surnameTextBox.TabIndex = 1;
             // 
             // completeButton
             // 
-            this.completeButton.Enabled = false;
-            this.completeButton.Location = new System.Drawing.Point(6, 323);
+            this.completeButton.Location = new System.Drawing.Point(6, 346);
             this.completeButton.Name = "completeButton";
             this.completeButton.Size = new System.Drawing.Size(316, 26);
             this.completeButton.TabIndex = 10;
@@ -89,19 +119,19 @@
             this.completeButton.UseVisualStyleBackColor = true;
             this.completeButton.Click += new System.EventHandler(this.completeButton_Click);
             // 
-            // townLabel
+            // cityLabel
             // 
-            this.townLabel.AutoSize = true;
-            this.townLabel.Location = new System.Drawing.Point(14, 195);
-            this.townLabel.Name = "townLabel";
-            this.townLabel.Size = new System.Drawing.Size(37, 13);
-            this.townLabel.TabIndex = 19;
-            this.townLabel.Text = "Город";
+            this.cityLabel.AutoSize = true;
+            this.cityLabel.Location = new System.Drawing.Point(12, 238);
+            this.cityLabel.Name = "cityLabel";
+            this.cityLabel.Size = new System.Drawing.Size(37, 13);
+            this.cityLabel.TabIndex = 19;
+            this.cityLabel.Text = "Город";
             // 
             // birthdayGroupBox
             // 
             this.birthdayGroupBox.Controls.Add(this.birthdayPicker);
-            this.birthdayGroupBox.Location = new System.Drawing.Point(8, 229);
+            this.birthdayGroupBox.Location = new System.Drawing.Point(6, 272);
             this.birthdayGroupBox.Name = "birthdayGroupBox";
             this.birthdayGroupBox.Size = new System.Drawing.Size(314, 37);
             this.birthdayGroupBox.TabIndex = 24;
@@ -118,46 +148,16 @@
             this.birthdayPicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.birthdayPicker.Size = new System.Drawing.Size(156, 20);
             this.birthdayPicker.TabIndex = 6;
+            this.birthdayPicker.Value = new System.DateTime(2023, 9, 14, 0, 0, 0, 0);
             // 
             // countryLabel
             // 
             this.countryLabel.AutoSize = true;
-            this.countryLabel.Location = new System.Drawing.Point(14, 169);
+            this.countryLabel.Location = new System.Drawing.Point(12, 212);
             this.countryLabel.Name = "countryLabel";
             this.countryLabel.Size = new System.Drawing.Size(43, 13);
             this.countryLabel.TabIndex = 18;
             this.countryLabel.Text = "Страна";
-            // 
-            // townDomainUpDown
-            // 
-            this.townDomainUpDown.Enabled = false;
-            this.townDomainUpDown.Location = new System.Drawing.Point(160, 193);
-            this.townDomainUpDown.Name = "townDomainUpDown";
-            this.townDomainUpDown.Size = new System.Drawing.Size(156, 20);
-            this.townDomainUpDown.TabIndex = 5;
-            this.townDomainUpDown.Text = "...";
-            this.townDomainUpDown.Wrap = true;
-            // 
-            // countryDomainUpDown
-            // 
-            this.countryDomainUpDown.Items.Add("Россия");
-            this.countryDomainUpDown.Items.Add("США");
-            this.countryDomainUpDown.Items.Add("Украина");
-            this.countryDomainUpDown.Items.Add("Казахстан");
-            this.countryDomainUpDown.Items.Add("Китай");
-            this.countryDomainUpDown.Location = new System.Drawing.Point(160, 167);
-            this.countryDomainUpDown.Name = "countryDomainUpDown";
-            this.countryDomainUpDown.Size = new System.Drawing.Size(156, 20);
-            this.countryDomainUpDown.TabIndex = 4;
-            this.countryDomainUpDown.Text = "...";
-            this.countryDomainUpDown.Wrap = true;
-            // 
-            // progressBar
-            // 
-            this.progressBar.Location = new System.Drawing.Point(8, 303);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(314, 14);
-            this.progressBar.TabIndex = 14;
             // 
             // patronymicLabel
             // 
@@ -193,13 +193,6 @@
             this.patronymicTextBox.Size = new System.Drawing.Size(150, 20);
             this.patronymicTextBox.TabIndex = 3;
             // 
-            // surnameTextBox
-            // 
-            this.surnameTextBox.Location = new System.Drawing.Point(166, 27);
-            this.surnameTextBox.Name = "surnameTextBox";
-            this.surnameTextBox.Size = new System.Drawing.Size(150, 20);
-            this.surnameTextBox.TabIndex = 1;
-            // 
             // nameTextBox
             // 
             this.nameTextBox.Location = new System.Drawing.Point(166, 60);
@@ -207,23 +200,14 @@
             this.nameTextBox.Size = new System.Drawing.Size(150, 20);
             this.nameTextBox.TabIndex = 2;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(8, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(90, 99);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.whatRadioButton);
-            this.groupBox1.Controls.Add(this.manRadioButton);
-            this.groupBox1.Controls.Add(this.womanRadioButton);
+            this.groupBox1.Controls.Add(this.maleRadioButton);
+            this.groupBox1.Controls.Add(this.femaleRadioButton);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(8, 124);
+            this.groupBox1.Location = new System.Drawing.Point(8, 158);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(314, 37);
             this.groupBox1.TabIndex = 15;
@@ -240,68 +224,98 @@
             this.whatRadioButton.Text = "Не определилось";
             this.whatRadioButton.UseVisualStyleBackColor = true;
             // 
-            // manRadioButton
+            // maleRadioButton
             // 
-            this.manRadioButton.AutoSize = true;
-            this.manRadioButton.Checked = true;
-            this.manRadioButton.Location = new System.Drawing.Point(41, 12);
-            this.manRadioButton.Name = "manRadioButton";
-            this.manRadioButton.Size = new System.Drawing.Size(71, 17);
-            this.manRadioButton.TabIndex = 4;
-            this.manRadioButton.Text = "Мужской";
-            this.manRadioButton.UseVisualStyleBackColor = true;
+            this.maleRadioButton.AutoSize = true;
+            this.maleRadioButton.Checked = true;
+            this.maleRadioButton.Location = new System.Drawing.Point(41, 12);
+            this.maleRadioButton.Name = "maleRadioButton";
+            this.maleRadioButton.Size = new System.Drawing.Size(71, 17);
+            this.maleRadioButton.TabIndex = 4;
+            this.maleRadioButton.TabStop = true;
+            this.maleRadioButton.Text = "Мужской";
+            this.maleRadioButton.UseVisualStyleBackColor = true;
             // 
-            // womanRadioButton
+            // femaleRadioButton
             // 
-            this.womanRadioButton.AutoSize = true;
-            this.womanRadioButton.Location = new System.Drawing.Point(118, 12);
-            this.womanRadioButton.Name = "womanRadioButton";
-            this.womanRadioButton.Size = new System.Drawing.Size(72, 17);
-            this.womanRadioButton.TabIndex = 5;
-            this.womanRadioButton.Text = "Женский";
-            this.womanRadioButton.UseVisualStyleBackColor = true;
+            this.femaleRadioButton.AutoSize = true;
+            this.femaleRadioButton.Location = new System.Drawing.Point(118, 12);
+            this.femaleRadioButton.Name = "femaleRadioButton";
+            this.femaleRadioButton.Size = new System.Drawing.Size(72, 17);
+            this.femaleRadioButton.TabIndex = 5;
+            this.femaleRadioButton.Text = "Женский";
+            this.femaleRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog";
+            this.openFileDialog.Filter = "Изображения (*.PNG; *.BMP; *.JPG; *JPEG; *.GIF)|*.PNG;*.BMP;*.JPG;*JPEG;*.GIF";
+            // 
+            // insertPhotoButton
+            // 
+            this.insertPhotoButton.Location = new System.Drawing.Point(8, 124);
+            this.insertPhotoButton.Name = "insertPhotoButton";
+            this.insertPhotoButton.Size = new System.Drawing.Size(90, 23);
+            this.insertPhotoButton.TabIndex = 27;
+            this.insertPhotoButton.Text = "Вставить фото";
+            this.insertPhotoButton.UseVisualStyleBackColor = true;
+            this.insertPhotoButton.Click += new System.EventHandler(this.insertPhotoButton_Click);
+            // 
+            // photoBox
+            // 
+            this.photoBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.photoBox.Image = global::form.Properties.Resources.anonim;
+            this.photoBox.InitialImage = null;
+            this.photoBox.Location = new System.Drawing.Point(8, 19);
+            this.photoBox.Name = "photoBox";
+            this.photoBox.Size = new System.Drawing.Size(90, 99);
+            this.photoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.photoBox.TabIndex = 0;
+            this.photoBox.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 377);
-            this.Controls.Add(this.UserInfoBox);
+            this.ClientSize = new System.Drawing.Size(352, 401);
+            this.Controls.Add(this.userInfoBox);
+            this.MaximumSize = new System.Drawing.Size(368, 440);
+            this.MinimumSize = new System.Drawing.Size(368, 440);
             this.Name = "Form1";
-            this.Text = "Тестирование";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.UserInfoBox.ResumeLayout(false);
-            this.UserInfoBox.PerformLayout();
+            this.Text = "Анкета";
+            this.userInfoBox.ResumeLayout(false);
+            this.userInfoBox.PerformLayout();
             this.birthdayGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photoBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox UserInfoBox;
+        private System.Windows.Forms.GroupBox userInfoBox;
         private System.Windows.Forms.TextBox surnameTextBox;
         private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox photoBox;
         private System.Windows.Forms.TextBox patronymicTextBox;
         private System.Windows.Forms.Label patronymicLabel;
         private System.Windows.Forms.Label surnameLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.RadioButton whatRadioButton;
-        private System.Windows.Forms.RadioButton womanRadioButton;
-        private System.Windows.Forms.RadioButton manRadioButton;
-        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.RadioButton femaleRadioButton;
+        private System.Windows.Forms.RadioButton maleRadioButton;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DomainUpDown countryDomainUpDown;
-        private System.Windows.Forms.DomainUpDown townDomainUpDown;
-        private System.Windows.Forms.Label townLabel;
+        private System.Windows.Forms.Label cityLabel;
         private System.Windows.Forms.Label countryLabel;
         private System.Windows.Forms.DateTimePicker birthdayPicker;
         private System.Windows.Forms.Button completeButton;
         private System.Windows.Forms.GroupBox birthdayGroupBox;
+        private System.Windows.Forms.ComboBox cityComboBox;
+        private System.Windows.Forms.ComboBox countryComboBox;
+        private System.Windows.Forms.Button insertPhotoButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 
