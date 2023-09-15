@@ -18,42 +18,54 @@ namespace form
         private string[] сitiesOfUSA = { "Лос-Сантос", "Лас-Вентурас", "Сан-Фиерро" };
 
 
+        private string GenerateErrorMessage() // генерирует сообщение для ошибки
+        {
+            string errorMessage = null;
+
+            if (String.IsNullOrEmpty(this.surnameTextBox.Text))
+            {
+                errorMessage += "Вы не заполнили поле с фамилией!\n";
+            }
+            if (String.IsNullOrEmpty(this.nameTextBox.Text))
+            {
+                errorMessage += "Вы не заполнили поле с именем!\n";
+            }
+            if (String.IsNullOrEmpty(this.patronymicTextBox.Text))
+            {
+                errorMessage += "Вы не заполнили поле с отчеством!\n";
+            }
+            if (String.IsNullOrEmpty(this.countryComboBox.Text))
+            {
+                errorMessage += "Вы не заполнили поле со страной!\n";
+            }
+            if (String.IsNullOrEmpty(this.cityComboBox.Text))
+            {
+                errorMessage += "Вы не заполнили поле с городом!\n";
+            }
+
+            return errorMessage;
+        }
+
+        private bool MyIsNullOrEmpty() // есть ли хотя бы один пустой textBox
+        {
+            return String.IsNullOrEmpty(this.surnameTextBox.Text) || String.IsNullOrEmpty(this.nameTextBox.Text) || String.IsNullOrEmpty(this.patronymicTextBox.Text) || String.IsNullOrEmpty(this.countryComboBox.Text) || String.IsNullOrEmpty(this.cityComboBox.Text);
+        }
+
+
+
         public Form1()
         {
             InitializeComponent();
 
-            this.whatRadioButton.Checked = true; // по дефолту пол установлен на неопределённом
+            this.whatRadioButton.Checked = true; // по дефолту пол установлен на неопределённый
             this.cityComboBox.Enabled = false;
         }
 
         private void completeButton_Click(object sender, EventArgs e) // что происходит после нажатия кнопки "Готово"
         {
-            if (this.surnameTextBox.Text == "" || this.nameTextBox.Text == "" || this.patronymicTextBox.Text == "" || this.countryComboBox.Text == "" || this.cityComboBox.Text == "") // это бы в отдельный метод засунуть, но пусть так будет
+            if (MyIsNullOrEmpty()) 
             {
-                string errorMessage = null;
-
-                if (this.surnameTextBox.Text == "")
-                {
-                    errorMessage += "Вы не заполнили поле с фамилией!\n";
-                }
-                if (this.nameTextBox.Text == "")
-                {
-                   errorMessage += "Вы не заполнили поле с именем!\n";
-                }
-                if (this.patronymicTextBox.Text == "")
-                {
-                    errorMessage += "Вы не заполнили поле с отчеством!\n";
-                }
-                if (this.countryComboBox.Text == "")
-                {
-                    errorMessage += "Вы не заполнили поле со страной!\n";
-                }
-                if (this.cityComboBox.Text == "")
-                {
-                    errorMessage += "Вы не заполнили поле с городом!\n";
-                }
-
-                MessageBox.Show(errorMessage, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(GenerateErrorMessage(), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -61,25 +73,30 @@ namespace form
 
                 if (this.maleRadioButton.Checked)
                 {
-                    gender = "Мужской";
+                    gender = "мужской";
                 }
                 else if (this.femaleRadioButton.Checked)
                 {
-                    gender = "Женский";
+                    gender = "женский";
                 }
                 else
                 {
-                    gender = "Не определился ещё";
+                    gender = "ещё не определился";
                 }
 
                 MessageBox.Show("Ваша анкета,\n\n" +
+
                     $"Фамилия: {this.surnameTextBox.Text}\n" +
                     $"Имя: {this.nameTextBox.Text}\n" +
                     $"Отчество: {this.patronymicTextBox.Text}\n\n" +
+
                     $"Пол: {gender}\n\n" +
+
                     $"Страна: {this.countryComboBox.Text}\n" +
                     $"Город: {this.cityComboBox.Text}\n\n" +
+
                     $"Дата рождения: {this.birthdayPicker.Text}\n\n" +
+
                     "Была успешно отправлена!", "Анкета", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
